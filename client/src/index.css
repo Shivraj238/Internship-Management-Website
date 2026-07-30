@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --primary: #3b82f6;
+  --accent: #8b5cf6;
+  --bg: #020617;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+body {
+  background: radial-gradient(circle at top right, #1e1b4b, #020617);
+  color: #f8fafc;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 8%;
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  position: sticky; top: 0; z-index: 100;
+}
+
+.logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(to right, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.logo span { background: linear-gradient(to right, #a78bfa, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 30px;
+  transition: 0.4s;
+}
+
+.progress-container {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  height: 8px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+.progress-bar {
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  height: 100%;
+  width: 0%;
+  transition: width 1s ease-in-out;
+}
+
+input, select, textarea {
+  width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--glass-border);
+  border-radius: 12px; padding: 14px; color: white; outline: none; margin-top: 8px;
+}
+
+label { display: block; margin-top: 16px; color: #94a3b8; font-size: 0.85rem; }
+
+.btn-glow {
+  padding: 12px 24px; border-radius: 12px; border: none;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white; font-weight: 700; cursor: pointer; transition: 0.3s;
+  box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4);
+}
+.btn-glow:hover { transform: scale(1.02); }
+
+.badge { padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; }
+.approved { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+.pending { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+
+footer {
+  margin-top: 50px; padding: 30px 8%; text-align: center;
+  background: rgba(2, 6, 23, 0.8); border-top: 1px solid var(--glass-border);
+  color: #64748b; font-size: 0.85rem;
+}
+
+.dashboard-table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+.dashboard-table td { background: rgba(255,255,255,0.02); padding: 20px; }
+.dashboard-table th { padding: 0 20px 5px; }
